@@ -1,0 +1,41 @@
+{
+  "engineVersion": "5.2.14", // 游戏运行的引擎版本
+  "compilerVersion": "5.2.14", /*// 项目当前使用的egret 命令行版本   比如执行 build pulish  等命令   各个版本的命令会有所不同*/
+  "template": {}, /*//有这个字段  那么 发布 html5 项目时 会使用 template/web/index.html 文件作为项目的入口*/
+  "target": {  /*// 执行build 和publish 命令时的目标类型  web - Html5   wxgame -- 编译为 微信小程序 项目  bricks -- qq玩一玩  andriod --- 安卓项目 iOS  --- iOS 项目*/
+    "current": "web"   /*// 默认 H5 项目*/
+  },
+  /*// 修改该配置中的内容后，需要执行 egret clean 命令进行重新构建，以保证改动生效。*/
+  "modules": [  /*// 定义项目中引用的所有库文件  每一个库都是一个 {name: '', path: ''} 配置信息     name 是 库 的名字   path 库文件存放路径  如果没有指定 默认值是 ${EGRET_DEFAULT}
+                //  就是 跟目录下的 libs/modules 目录
+                // 其中 path 可以包含库的文件版本号   。。。 另外 如果库在项目外 引擎编译的时候会首先将对应的库 copy 到中的 libs/modules 文件夹中，然后加载该文件夹中的库
+    */{
+      "name": "egret"  /*// 这是一个内置库 所有的内置库 都可以省略 path 字段  并且 使用的版本 默认和 egret_version 使用相同的版本  也可以在path字段里单独设置该库使用的版本
+      // path: "${EGRET_DEFAULT}/egret",
+      //  内资库 使用 指定版本号的方式   path:"${EGRET_APP_DATA}/5.0.3(版本号)"*/
+    },
+    {
+      "name": "game"
+    },
+    {
+      "name": "tween"
+    },
+    {
+      "name": "assetsmanager"
+    },
+    {
+      "name": "promise",
+      "path": "./libs/static/promise"
+    }
+    /*// 比如我引入一个 库   myku  并且我放到了 相对于跟目录到上级目录的 libs下的static目录下  就应该这么写    （按照我的理解  只要指定 路径就可以了   但是最好先不要放到 本目录的 libs下 以免清空 ）
+    // {
+          // name: 'myku',
+          // path: '../libs/static/myku'
+    // }*/
+  ],
+  // 针对 egret run 启动本地服务的时候  在url 地址上添加的参数  如果这么设定之后  egret run 执行之后   浏览器会打开地址   http://ip地址:3000/index.html?okok=12&id=1
+  "urlParams": {
+    "id": 1,
+    "okok": 12
+  }
+}

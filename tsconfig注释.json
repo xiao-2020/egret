@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es5", 
+        "outDir": "bin-debug", //编译好的 js 放置的目录  暂不支持修改
+        "experimentalDecorators": true, //启用实验性质的语法装饰器，由于引擎里的部分库使用了最新的语法，需要开启这个配置
+        "lib": [ // 编译需要的默认的库文件 默认为 以下3个 可以根据需求自行添加
+            "es5",
+            "dom",
+            "es2015.promise"
+        ],
+        "types": [],
+        "sourceMap": true,  // 把 .ts文件 文件编译成js文件时 生成对应的 js。map 文件， 该文件 可以让用户在浏览器内 调试ts文件
+        "removeComments": true // 编译成js时 删除原来在 ts 文件里面的注释
+
+    },
+    "include": [ // 设置有哪些文件回参与编译
+        "src",
+        "libs"
+    ]
+}
+
+// 更详细的编译文件 参数  可以 参照 tsconfig.json 的官方文档
