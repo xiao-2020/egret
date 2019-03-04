@@ -8,6 +8,7 @@
 		"libs/static/promise/promise.js"
 	],
 	"game": [
+		"bin-debug/H5.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js"
